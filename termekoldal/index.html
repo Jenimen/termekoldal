@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merino kötött pulóver – Borostyán webáruház</title>
+  <meta name="description" content="Zsályazöld merinógyapjú pulóver képnézegetővel, méretválasztóval és kosárfunkcióval. Egyetemi projektfeladat (demó).">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="img/pulover-elol.svg" as="image">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ugrás a tartalomra</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="Borostyán – főoldal">Borostyán</a>
+      <button class="cart-button" id="cart-open" type="button" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6h15l-1.5 9h-12L5 3H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.5" fill="currentColor"/><circle cx="18" cy="20" r="1.5" fill="currentColor"/></svg>
+        <span>Kosár</span>
+        <span class="cart-count" id="cart-count" aria-label="0 termék a kosárban">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="Morzsamenü">
+      <ol><li><a href="#">Férfi</a></li><li><a href="#">Pulóverek</a></li><li aria-current="page" id="crumb-name">Merino kötött pulóver</li></ol>
+    </nav>
+
+    <div class="product" id="product">
+      <!-- ============ Képnézegető ============ -->
+      <section class="gallery" id="gallery" aria-roledescription="képnézegető" aria-label="Termékképek">
+        <div class="gallery-stage" id="gallery-stage" tabindex="0" aria-describedby="gallery-help">
+          <img id="gallery-main" src="img/pulover-elol.svg" alt="" width="800" height="1000" draggable="false">
+          <button class="gallery-nav prev" id="gallery-prev" type="button" aria-label="Előző kép">‹</button>
+          <button class="gallery-nav next" id="gallery-next" type="button" aria-label="Következő kép">›</button>
+          <button class="gallery-zoom" id="gallery-zoom" type="button" aria-label="Kép nagyítása">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <p class="gallery-counter" id="gallery-counter" aria-live="polite">1 / 5</p>
+        </div>
+        <p id="gallery-help" class="visually-hidden">A nyilakkal lapozhatsz a képek között, Enterrel nagyíthatsz. Érintőképernyőn húzd el a képet.</p>
+        <ul class="gallery-thumbs" id="gallery-thumbs" aria-label="Bélyegképek"></ul>
+      </section>
+
+      <!-- ============ Termékadatok ============ -->
+      <section class="info" aria-labelledby="product-name">
+        <p class="brand" id="product-brand">Borostyán</p>
+        <h1 id="product-name">Merino kötött pulóver</h1>
+        <p class="rating" id="product-rating"></p>
+        <p class="price" id="product-price"></p>
+        <p class="shipping-note" id="shipping-note"></p>
+        <p class="color">Szín: <strong id="product-color"></strong></p>
+
+        <form id="buy-form" novalidate>
+          <fieldset class="sizes" id="size-fieldset" aria-describedby="size-error size-stock">
+            <legend>Méret</legend>
+            <button type="button" class="link-button size-guide-link" id="size-guide-open" aria-haspopup="dialog">Mérettáblázat</button>
+            <div class="size-options" id="size-options"></div>
+            <p class="size-stock" id="size-stock" aria-live="polite"></p>
+            <p class="error" id="size-error" role="alert"></p>
+          </fieldset>
+
+          <div class="buy-row">
+            <div class="qty">
+              <label class="visually-hidden" for="qty-input">Mennyiség</label>
+              <button type="button" class="qty-btn" data-step="-1" aria-label="Mennyiség csökkentése">−</button>
+              <input id="qty-input" name="qty" type="number" inputmode="numeric" min="1" max="10" value="1">
+              <button type="button" class="qty-btn" data-step="1" aria-label="Mennyiség növelése">+</button>
+            </div>
+            <button class="btn-primary" id="add-to-cart" type="submit">Kosárba teszem</button>
+          </div>
+        </form>
+
+        <p class="short" id="product-short"></p>
+        <details open>
+          <summary>Termékjellemzők</summary>
+          <ul id="product-details"></ul>
+        </details>
+        <details>
+          <summary>Szállítás és visszaküldés</summary>
+          <p>Kiszállítás 1–3 munkanapon belül. A nem megfelelő méretű terméket 30 napon belül díjmentesen kicserélünk.</p>
+        </details>
+      </section>
+    </div>
+    <p class="demo-note">Ez az oldal egyetemi projektfeladat keretében készült bemutató (demó). A termék, a márka és az árak fiktívek, valódi vásárlás nem lehetséges.</p>
+  </main>
+
+  <!-- ============ Nagyítás ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="Nagyított kép">
+    <div class="lightbox-stage" id="lightbox-stage">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Nagyítás bezárása">×</button>
+    <p class="lightbox-hint">Mozgasd az egeret vagy az ujjad a kép részleteinek megtekintéséhez. Bezárás: Esc.</p>
+  </dialog>
+
+  <!-- ============ Mérettáblázat ============ -->
+  <dialog class="modal" id="size-guide" aria-labelledby="size-guide-title">
+    <div class="modal-head">
+      <h2 id="size-guide-title">Mérettáblázat</h2>
+      <button class="icon-close" type="button" id="size-guide-close" aria-label="Mérettáblázat bezárása">×</button>
+    </div>
+    <div class="table-wrap"><table id="size-table"><caption class="visually-hidden">A pulóver méretei centiméterben</caption></table></div>
+    <p id="size-fit"></p>
+    <p id="size-model"></p>
+    <h3>Így mérj</h3>
+    <ul>
+      <li><strong>Mellbőség:</strong> a mellkas legszélesebb részén, a hónalj alatt vízszintesen körbe mérve.</li>
+      <li><strong>Ujjhossz:</strong> a váll csúcsától a csuklócsontig, enyhén behajlított karral.</li>
+    </ul>
+  </dialog>
+
+  <!-- ============ Kosár ============ -->
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <div class="drawer-head">
+      <h2 id="cart-title">Kosár</h2>
+      <button class="icon-close" type="button" id="cart-close" aria-label="Kosár bezárása">×</button>
+    </div>
+    <div class="drawer-body">
+      <p class="cart-empty" id="cart-empty">A kosarad üres.</p>
+      <ul class="cart-items" id="cart-items"></ul>
+    </div>
+    <div class="drawer-foot" id="cart-foot">
+      <p class="free-ship" id="free-ship"></p>
+      <dl class="totals">
+        <div><dt>Részösszeg</dt><dd id="cart-subtotal">0 Ft</dd></div>
+        <div><dt>Szállítás</dt><dd id="cart-shipping">0 Ft</dd></div>
+        <div class="grand"><dt>Végösszeg</dt><dd id="cart-total">0 Ft</dd></div>
+      </dl>
+      <button class="btn-primary wide" type="button" id="checkout">Tovább a pénztárhoz</button>
+      <p class="checkout-note" id="checkout-note" role="status"></p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="demo-note">Az oldal működéséhez engedélyezni kell a JavaScriptet.</p></noscript>
+</body>
+</html>

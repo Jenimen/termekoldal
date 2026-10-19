@@ -1,0 +1,45 @@
+{
+  "id": "BRS-MER-001",
+  "brand": "Borostyán",
+  "name": "Merino kötött pulóver",
+  "color": "Zsályazöld",
+  "price": 18990,
+  "currency": "HUF",
+  "shipping": { "fee": 1490, "freeAbove": 25000 },
+  "rating": { "value": 4.6, "count": 38 },
+  "short": "Puha, könnyű merinógyapjú pulóver bordázott gallérral és mandzsettával. Egyenes szabás, minden nap viselhető.",
+  "images": [
+    { "src": "img/pulover-elol.svg", "alt": "A zsályazöld merino pulóver elölnézetből, kerek nyakkivágással" },
+    { "src": "img/pulover-hatul.svg", "alt": "A pulóver hátulnézetből" },
+    { "src": "img/pulover-galler.svg", "alt": "Közeli kép a bordázott, kerek gallérról" },
+    { "src": "img/pulover-kotes.svg", "alt": "A kötésminta részlete közelről" },
+    { "src": "img/pulover-hajtogatva.svg", "alt": "Összehajtott pulóver a ruhacímkével" }
+  ],
+  "sizes": [
+    { "code": "XS", "stock": 0 },
+    { "code": "S", "stock": 4 },
+    { "code": "M", "stock": 12 },
+    { "code": "L", "stock": 2 },
+    { "code": "XL", "stock": 7 },
+    { "code": "XXL", "stock": 0 }
+  ],
+  "sizeChart": {
+    "columns": ["Méret", "Mellbőség (cm)", "Hossz (cm)", "Ujjhossz (cm)", "EU", "UK/US"],
+    "rows": [
+      ["XS", "86–90", "64", "60", "44", "34"],
+      ["S", "90–96", "66", "61", "46", "36"],
+      ["M", "96–102", "68", "62", "48", "38"],
+      ["L", "102–108", "70", "63", "50", "40"],
+      ["XL", "108–114", "72", "64", "52", "42"],
+      ["XXL", "114–120", "74", "65", "54", "44"]
+    ],
+    "model": "A modell 182 cm magas, mellbősége 98 cm, és M méretet visel.",
+    "fit": "Egyenes, normál szabás. Ha két méret között vagy, lazább viseletre a nagyobbat válaszd."
+  },
+  "details": [
+    "Anyag: 100% merinógyapjú (18,5 mikron)",
+    "Bordázott gallér, mandzsetta és derékrész",
+    "Súly: kb. 320 g (M méret)",
+    "Kezelés: kézi mosás 30 °C-on, fektetve szárítandó"
+  ]
+}
